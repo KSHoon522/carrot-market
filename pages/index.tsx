@@ -3,14 +3,24 @@ export default function Home() {
     <div className="bg-slate-400 py-20 px-16 grid gap-10">
       <div className=" bg-white p-6 rounded-3xl shadow-xl flex flex-col jusitfy-center">
         <span className="font-semibold text-3xl">Select Item</span>
-        <div className="flex justify-between">
-          <span className="text-gray-500 my-2">Gray Chair</span>
-          <span className="font-semibold">$19</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-gray-500">blue Chair</span>
-          <span className="font-semibold">$19</span>
-        </div>
+        <ul>
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div
+              key={i}
+              className="flex justify-between odd:bg-blue-100 even:bg-yellow-100 py-1 "
+            >
+              <span className="text-gray-500">blue Chair</span>
+              <span className="font-semibold">$19</span>
+            </div>
+          ))}
+        </ul>
+        <ul>
+          {["a", "b", "c", "", "e"].map((c, i) => (
+            <li className="bg-red-500 py-2 empty:hidden" key={i}>
+              {c}
+            </li>
+          ))}
+        </ul>
         <div className="flex justify-between mt-2 pt-2 border-t-2 border-dashed">
           <span>Total</span>
           <span className="font-semibold">$38</span>
