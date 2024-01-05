@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className="bg-slate-400 py-20 px-16 grid gap-10">
-      <div className=" bg-white p-6 rounded-3xl shadow-xl flex flex-col jusitfy-center">
+      {/* <div className=" bg-white p-6 rounded-3xl shadow-xl flex flex-col jusitfy-center">
         <span className="font-semibold text-3xl">Select Item</span>
         <ul>
           {[1, 2, 3, 4, 5].map((i) => (
@@ -86,7 +86,23 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
+      <form className="flex flex-col space-y-2 bg-blue-500 p-5 focus-within:bg-blue-100">
+        <input
+          type="text"
+          required
+          placeholder="Username"
+          className="  peer border p-1 border-gray-400 rounded-md"
+        />
+        <span className="hidden peer-invalid:block peer-invalid:text-red-500">
+          This input is invalid
+        </span>
+        <span className="hidden peer-valid:block peer-valid:text-white">
+          Awesome username!
+        </span>
+        <input type="password" required placeholder="Password" />
+        <input type="submit" value="Login" className="bg-white" />
+      </form>
     </div>
   );
 }
