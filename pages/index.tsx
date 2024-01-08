@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="bg-slate-400 py-20 px-16 grid gap-10">
+    <div className="flex flex-col space-y-2 p-5">
       {/* <div className=" bg-white p-6 rounded-3xl shadow-xl flex flex-col jusitfy-center">
         <span className="font-semibold text-3xl">Select Item</span>
         <ul>
@@ -87,7 +87,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <form className="flex flex-col space-y-2 bg-blue-500 p-5 focus-within:bg-blue-100">
+      {/* <form className="flex flex-col space-y-2 bg-blue-500 p-5 focus-within:bg-blue-100">
         <input
           type="text"
           required
@@ -102,7 +102,25 @@ export default function Home() {
         </span>
         <input type="password" required placeholder="Password" />
         <input type="submit" value="Login" className="bg-white" />
-      </form>
+      </form> */}
+      {/* <details className="select-none open:text-white open:bg-indigo-300">
+        <summary className=" cursor-pointer">What is my fav. food</summary>
+        <span className="selection:bg-indigo-400 selection:text-white">
+          짜파게티
+        </span>
+      </details> */}
+      {/* <ul className="list-decimal marker:text-teal-500">
+        <li>hi</li>
+        <li>hi</li>
+        <li>hi</li>
+      </ul> */}
+      {/* <input
+        type="file"
+        className="file:border-0 file:rounded-xl file:px-5 file:text-white file:bg-purple-400 file:transition-colors file:cursor-pointer file:hover:bg-purple-600 file:hover:border-purple-4000 file:hover:border"
+      /> */}
+      <p className="first-letter:text-7xl first-line:hover:text-purple-400">
+        lorem ipsum lalalalalala <br></br> asdfasdf
+      </p>
     </div>
   );
 }
