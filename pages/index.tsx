@@ -1,16 +1,17 @@
 export default function Home() {
   return (
     <div className="bg-slate-400 p-20 grid gap-10 lg:place-content-center lg:grid-cols-2 xl:grid-cols-3 min-h-screen">
-      <div className=" bg-white flex flex-col justify-between sm:bg-red-400 md:bg-teal-400 lg:bg-white p-6 rounded-3xl shadow-xl">
-        <span className="font-semibold text-3xl">Select Item</span>
+      <div className=" bg-white flex flex-col justify-between dark:bg-black sm:bg-red-400 md:bg-teal-400 lg:bg-white p-6 rounded-3xl shadow-xl">
+        <span className="font-semibold text-3xl dark:text-white">
+          Select Item
+        </span>
         <ul>
           {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="flex justify-between odd:bg-blue-100 even:bg-yellow-100 py-1 "
-            >
-              <span className="text-gray-500">blue Chair</span>
-              <span className="font-semibold">$19</span>
+            <div key={i} className="flex justify-between py-1 ">
+              <span className="text-gray-500 dark:text-gray-100">
+                blue Chair
+              </span>
+              <span className="font-semibold dark:text-white">$19</span>
             </div>
           ))}
         </ul>
@@ -25,7 +26,7 @@ export default function Home() {
           <span>Total</span>
           <span className="font-semibold">$38</span>
         </div>
-        <button className="mt-5 bg-blue-500 text-white p-3 text-center rounded-xl w-1/2 mx-auto hover:bg-teal-500 hover:text-black active:bg-yellow-500 focus:bg-red-500">
+        <button className="mt-5 dark:border dark:border-white dark:bg-red-300 bg-blue-500 text-white p-3 text-center rounded-xl w-1/2 mx-auto hover:bg-teal-500 hover:text-black active:bg-yellow-500 focus:bg-red-500">
           Checkout
         </button>
       </div>
