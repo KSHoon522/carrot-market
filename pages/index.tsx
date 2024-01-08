@@ -1,10 +1,10 @@
 export default function Home() {
   return (
-    <div className="flex flex-col space-y-2 p-5">
-      {/* <div className=" bg-white p-6 rounded-3xl shadow-xl flex flex-col jusitfy-center">
+    <div className="bg-slate-400 p-20 grid gap-10 lg:place-content-center lg:grid-cols-2 xl:grid-cols-3 min-h-screen">
+      <div className=" bg-white flex flex-col justify-between sm:bg-red-400 md:bg-teal-400 lg:bg-white p-6 rounded-3xl shadow-xl">
         <span className="font-semibold text-3xl">Select Item</span>
         <ul>
-          {[1, 2, 3, 4, 5].map((i) => (
+          {[1, 2, 3].map((i) => (
             <div
               key={i}
               className="flex justify-between odd:bg-blue-100 even:bg-yellow-100 py-1 "
@@ -14,13 +14,13 @@ export default function Home() {
             </div>
           ))}
         </ul>
-        <ul>
+        {/* <ul>
           {["a", "b", "c", "", "e"].map((c, i) => (
             <li className="bg-red-500 py-2 empty:hidden" key={i}>
               {c}
             </li>
           ))}
-        </ul>
+        </ul> */}
         <div className="flex justify-between mt-2 pt-2 border-t-2 border-dashed">
           <span>Total</span>
           <span className="font-semibold">$38</span>
@@ -30,7 +30,7 @@ export default function Home() {
         </button>
       </div>
       <div className=" bg-white rounded-3xl shadow-xl overflow-hidden ">
-        <div className="bg-blue-500 p-6 pb-14">
+        <div className="portrait:bg-indigo-400 landscape:bg-teal-500 p-6 pb-14 xl:pb-48">
           <span className="text-white text-2xl">Profile</span>
         </div>
         <div className="rounded-3xl p-6 bg-white relative -top-5 ">
@@ -39,7 +39,7 @@ export default function Home() {
               <span className="text-sm text-gray-500">Orders</span>
               <span className="font-medium ">340</span>
             </div>
-            <div className="h-24 w-24 bg-red-400 rounded-full hover:bg-teal-500 peer-hover:bg-black transition-colors" />
+            <div className="h-24 w-24 min-w-24 bg-red-400 rounded-full hover:bg-teal-500 peer-hover:bg-black transition-colors" />
             <div className="flex flex-col items-center">
               <span className="text-sm text-gray-500">Spent</span>
               <span className="font-medium">$2,310</span>
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className=" bg-white p-6 rounded-3xl shadow-xl">
+      <div className=" bg-white p-6 rounded-3xl shadow-xl lg:col-span-2 xl:col-span-1">
         <div className="flex mb-5 justify-between items-center">
           <span>←</span>
           <div className="space-x-3">
@@ -86,7 +86,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* <form className="flex flex-col space-y-2 bg-blue-500 p-5 focus-within:bg-blue-100">
         <input
           type="text"
@@ -118,9 +118,9 @@ export default function Home() {
         type="file"
         className="file:border-0 file:rounded-xl file:px-5 file:text-white file:bg-purple-400 file:transition-colors file:cursor-pointer file:hover:bg-purple-600 file:hover:border-purple-4000 file:hover:border"
       /> */}
-      <p className="first-letter:text-7xl first-line:hover:text-purple-400">
+      {/* <p className="first-letter:text-7xl first-line:hover:text-purple-400">
         lorem ipsum lalalalalala <br></br> asdfasdf
-      </p>
+      </p> */}
     </div>
   );
 }
