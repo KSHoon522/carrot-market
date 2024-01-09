@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </div>
       ))}
-      <button className="fixed bottom-24 right-5 bg-orange-400 rounded-full p-4 text-white shadow-xl hover:bg-orange-500 transition-colors">
+      <button className="fixed bottom-24 right-5 bg-orange-400 rounded-full p-4 border-transparent text-white shadow-xl hover:bg-orange-500 transition-colors">
         <svg
           className="h-6 w-6"
           xmlns="http://www.w3.org/2000/svg"
