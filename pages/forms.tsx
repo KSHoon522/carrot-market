@@ -1,55 +1,39 @@
-import { useState } from "react";
+import { FieldErrors, useForm } from "react-hook-form";
+
+interface LoginForm {
+  username: string;
+  email: string;
+  password: string;
+}
 
 export default function Forms() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const onUsernameChange = (event: React.SyntheticEvent<HTMLInputElement>) => {
-    const {
-      currentTarget: { value },
-    } = event;
-    setUsername(value);
+  const { register, watch, handleSubmit } = useForm<LoginForm>();
+  const onValid = (data: LoginForm) => {
+    console.log("valid");
   };
-  const onEmailChange = (event: React.SyntheticEvent<HTMLInputElement>) => {
-    const {
-      currentTarget: { value },
-    } = event;
-    setEmail(value);
+  const onInvalid = (errors: FieldErrors) => {
+    console.log(errors);
   };
-  const onPasswordChange = (event: React.SyntheticEvent<HTMLInputElement>) => {
-    const {
-      currentTarget: { value },
-    } = event;
-    setPassword(value);
-  };
-  const onSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log(email, password, username);
-  };
-
+  console.log(watch());
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSubmit(onValid, onInvalid)}>
       <input
-        value={username}
-        onChange={onUsernameChange}
+        {...register("username", {
+          required: "Username is required",
+          minLength: { value: 5, message: "need more than 4 characters" },
+        })}
         type="text"
         placeholder="Username"
-        required
       />
       <input
-        value={email}
-        onChange={onEmailChange}
+        {...register("email", { required: true })}
         type="email"
         placeholder="Email"
-        required
       />
       <input
-        value={password}
-        onChange={onPasswordChange}
+        {...register("password", { required: true })}
         type="password"
         placeholder="Password"
-        required
       />
       <input type="submit" value="create account" />
     </form>
