@@ -14,11 +14,23 @@ datasource db {
 
 
 model User {
-  id        Int @id @default(autoincrement())
-  phone     Int? @unique
-  email     String? @unique
+  id        Int       @id @default(autoincrement())
+  phone     Int?      @unique
+  email     String?   @unique
   name      String
   avatar    String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  tokens     Token[]
+}
+
+model Token{
+  id        Int       @id @default(autoincrement())
+  payload   String    @unique
+  user      User      @relation(fields: [userId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  userId    Int
+
+  @@index([userId])
 }
