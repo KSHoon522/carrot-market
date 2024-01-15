@@ -31,52 +31,16 @@ async function handler(
     },
   });
   console.log(token);
-  /* let user;
-  if (email) {
-    user = await client.user.findUnique({
-      where: {
-        email,
-      },
-    });
-    if (user) console.log("Found user");
-    if (!user) {
-      console.log("Did not find. Will create");
-      user = await client.user.create({
-        data: {
-          name: "Anonymous",
-        },
-      });
-    }
-    console.log(user);
-  }
+
   if (phone) {
-    user = await client.user.findUnique({
-      where: {
-        phone: +phone,
-      },
-    });
-    if (user) console.log("Found user");
-    if (!user) {
-      console.log("Did not find. Will create");
-      user = await client.user.create({
-        data: {
-          name: "Anonymous",
-          phone: +phone,
-        },
-      });
-    }
-    console.log(user);
-  } */
-  if (phone) {
-    const message = await twilioClient.messages.create({
+    /* const message = await twilioClient.messages.create({
       messagingServiceSid: process.env.TWILIO_SERVICE_SID,
       to: process.env.MY_PHONE_NUMBER!,
       body: `Your login token is ${payload}`,
     });
-    console.log(message);
-  }
-  if (email) {
-    const mailOptions = {
+    console.log(message); */
+  } else if (email) {
+    /* const mailOptions = {
       from: process.env.MAIL_ID,
       to: email,
       subject: "Nomad Carrot Authentication Email",
@@ -92,7 +56,7 @@ async function handler(
       }
     });
     smtpTransport.close();
-    console.log(result);
+    console.log(result); */
   }
   return res.json({
     ok: true,
