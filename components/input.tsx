@@ -6,7 +6,7 @@ interface InputProps {
   kind?: "text" | "price" | "phone";
   type: string;
   register: UseFormRegisterReturn;
-  required?: boolean;
+  required: boolean;
 }
 
 export default function Input({
