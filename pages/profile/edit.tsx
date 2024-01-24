@@ -36,7 +36,7 @@ const EditProfile: NextPage = () => {
     if (user?.phone) setValue("phone", user.phone);
     if (user?.avatar)
       setAvatarPreview(
-        `https://imagedelivery.net/LidoAQ5-kxbLTSpGk1lzjg/${user?.avatar}/public`
+        `https://imagedelivery.net/LidoAQ5-kxbLTSpGk1lzjg/${user?.avatar}/avatar` //cloudflare에서 variant 추가
       );
   }, [user, setValue]);
   const [editProfile, { data, loading }] =
