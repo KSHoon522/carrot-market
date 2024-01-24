@@ -40,7 +40,7 @@ const StreamPage: NextPage = () => {
       refreshInterval: 1000,
     }
   );
-  const [sendMessage, { loading, data: sendMessageData }] = useMutation(
+  const [sendMessage, { loading }] = useMutation(
     `/api/streams/${router.query.id}/messages`
   );
   const onValid = (form: MessageForm) => {
@@ -65,7 +65,7 @@ const StreamPage: NextPage = () => {
         } as any),
       false
     );
-    // sendMessage(form);
+    sendMessage(form);
   };
   return (
     <Layout canGoBack>
